@@ -1,0 +1,34 @@
+[newbee_mall]2022/05/08 - 13:59:50.579	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:15	use middleware logger
+[newbee_mall]2022/05/08 - 13:59:50.579	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:18	use middleware cors
+[newbee_mall]2022/05/08 - 13:59:50.779	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:53	router register success
+[newbee_mall]2022/05/08 - 13:59:50.779	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:36	server run success on 	{"address": ":8888"}
+[newbee_mall]2022/05/08 - 14:05:13.002	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:15	use middleware logger
+[newbee_mall]2022/05/08 - 14:05:13.002	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:18	use middleware cors
+[newbee_mall]2022/05/08 - 14:05:13.088	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:53	router register success
+[newbee_mall]2022/05/08 - 14:05:13.089	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:36	server run success on 	{"address": ":8888"}
+[newbee_mall]2022/05/08 - 14:15:40.890	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:15	use middleware logger
+[newbee_mall]2022/05/08 - 14:15:40.890	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:18	use middleware cors
+[newbee_mall]2022/05/08 - 14:15:40.979	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:53	router register success
+[newbee_mall]2022/05/08 - 14:15:40.979	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:36	server run success on 	{"address": ":8888"}
+[newbee_mall]2022/05/08 - 14:17:47.136	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:15	use middleware logger
+[newbee_mall]2022/05/08 - 14:17:47.137	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:18	use middleware cors
+[newbee_mall]2022/05/08 - 14:17:47.138	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:53	router register success
+[newbee_mall]2022/05/08 - 14:17:47.138	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:36	server run success on 	{"address": ":8888"}
+[newbee_mall]2022/05/08 - 14:19:25.440	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:15	use middleware logger
+[newbee_mall]2022/05/08 - 14:19:25.440	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:18	use middleware cors
+[newbee_mall]2022/05/08 - 14:19:25.442	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:53	router register success
+[newbee_mall]2022/05/08 - 14:19:25.442	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:36	server run success on 	{"address": ":8888"}
+[newbee_mall]2022/05/08 - 14:23:43.010	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:15	use middleware logger
+[newbee_mall]2022/05/08 - 14:23:43.010	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:18	use middleware cors
+[newbee_mall]2022/05/08 - 14:23:43.012	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:53	router register success
+[newbee_mall]2022/05/08 - 14:23:43.012	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:36	server run success on 	{"address": ":8888"}
+[newbee_mall]2022/05/08 - 14:27:14.482	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:15	use middleware logger
+[newbee_mall]2022/05/08 - 14:27:14.482	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:18	use middleware cors
+[newbee_mall]2022/05/08 - 14:27:14.483	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:53	router register success
+[newbee_mall]2022/05/08 - 14:27:14.483	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:36	server run success on 	{"address": ":8888"}
+[newbee_mall]2022/06/08 - 22:19:08.003	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:13	use middleware logger
+[newbee_mall]2022/06/08 - 22:19:08.030	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:35	router register success
+[newbee_mall]2022/06/08 - 22:19:08.031	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:23	server run success on 	{"address": ":8888"}
+[newbee_mall]2022/06/08 - 22:21:36.766	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:13	use middleware logger
+[newbee_mall]2022/06/08 - 22:21:36.826	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/initialize/router.go:35	router register success
+[newbee_mall]2022/06/08 - 22:21:36.827	[34minfo[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:23	server run success on 	{"address": ":8888"}
