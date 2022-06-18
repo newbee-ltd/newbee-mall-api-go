@@ -1,6 +1,0 @@
-[newbee_mall]2022/05/08 - 14:05:11.094	[31merror[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:38	accept tcp [::]:8888: use of closed network connection
-[newbee_mall]2022/05/08 - 14:15:39.138	[31merror[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:38	accept tcp [::]:8888: use of closed network connection
-[newbee_mall]2022/05/08 - 14:17:36.755	[31merror[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:38	accept tcp [::]:8888: use of closed network connection
-[newbee_mall]2022/05/08 - 14:24:39.004	[31merror[0m	/Users/le/Documents/forGO/newbee-mall-api-go/api/v1/mall/mall_user_address.go:66	获取地址失败	{"error": "不存在默认地址失败"}
-[newbee_mall]2022/06/08 - 22:21:35.307	[31merror[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:25	accept tcp [::]:8888: use of closed network connection
-[newbee_mall]2022/06/08 - 22:23:30.911	[31merror[0m	/Users/le/Documents/forGO/newbee-mall-api-go/core/server.go:25	accept tcp [::]:8888: use of closed network connection
