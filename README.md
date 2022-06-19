@@ -19,7 +19,7 @@
 ### 项目讲解
 
 - [【go商城】gin+gorm实现CRUD](https://blog.csdn.net/zxc19854/article/details/125267635)
--[【go商城】gin+mysql实现token登陆校验](https://blog.csdn.net/zxc19854/article/details/125352067)
+- [【go商城】gin+mysql实现token登陆校验](https://blog.csdn.net/zxc19854/article/details/125352067)
 
 ### 本地启动
 
