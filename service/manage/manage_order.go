@@ -58,7 +58,7 @@ func (m *ManageOrderService) CheckOut(ids request.IdsReq) (err error) {
 			}
 		}
 		if errorOrders == "" {
-			if err := global.GVA_DB.Where("order_id in ?", ids.Ids).UpdateColumns(manage.MallOrder{OrderStatus: 3, UpdateTime: common.JSONTime{Time: time.Now()}}).Error; err != nil {
+			if err = global.GVA_DB.Where("order_id in ?", ids.Ids).UpdateColumns(manage.MallOrder{OrderStatus: 3, UpdateTime: common.JSONTime{Time: time.Now()}}).Error; err != nil {
 				return err
 			}
 		} else {
@@ -79,12 +79,12 @@ func (m *ManageOrderService) CloseOrder(ids request.IdsReq) (err error) {
 				errorOrders = order.OrderNo + " "
 				continue
 			}
-			if order.OrderStatus == 4 || order.OrderStatus < 0 {
+			if order.OrderStatus == enum.ORDER_SUCCESS.Code() || order.OrderStatus < 0 {
 				errorOrders = order.OrderNo + " "
 			}
 		}
 		if errorOrders == "" {
-			if err := global.GVA_DB.Where("order_id in ?", ids.Ids).UpdateColumns(manage.MallOrder{OrderStatus: -3, UpdateTime: common.JSONTime{Time: time.Now()}}).Error; err != nil {
+			if err = global.GVA_DB.Where("order_id in ?", ids.Ids).UpdateColumns(manage.MallOrder{OrderStatus: enum.ORDER_CLOSED_BY_JUDGE.Code(), UpdateTime: common.JSONTime{Time: time.Now()}}).Error; err != nil {
 				return err
 			}
 		} else {
