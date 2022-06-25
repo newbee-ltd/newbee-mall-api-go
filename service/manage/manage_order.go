@@ -27,7 +27,7 @@ func (m *ManageOrderService) CheckDone(ids request.IdsReq) (err error) {
 				errorOrders = order.OrderNo + " "
 				continue
 			}
-			if order.OrderStatus != 1 {
+			if order.OrderStatus != enum.ORDER_PAID.Code() {
 				errorOrders = order.OrderNo + " "
 			}
 		}
@@ -53,7 +53,7 @@ func (m *ManageOrderService) CheckOut(ids request.IdsReq) (err error) {
 				errorOrders = order.OrderNo + " "
 				continue
 			}
-			if order.OrderStatus != 1 && order.OrderStatus != 2 {
+			if order.OrderStatus != enum.ORDER_PAID.Code() && order.OrderStatus != enum.ORDER_PACKAGED.Code() {
 				errorOrders = order.OrderNo + " "
 			}
 		}
