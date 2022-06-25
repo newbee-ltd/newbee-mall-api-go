@@ -132,7 +132,7 @@ func (m *ManageAdminUserApi) LockUser(c *gin.Context) {
 }
 
 // UploadFile 上传单图
-// 此处上传图片的功能可用，但是任然使用原前端项目的接口指向的地址是
+// 此处上传图片的功能可用，但是原前端项目的图片链接为服务器地址，如需要显示图片，需要修改前端指向的图片链接
 func (m *ManageAdminUserApi) UploadFile(c *gin.Context) {
 	var file example.ExaFileUploadAndDownload
 	noSave := c.DefaultQuery("noSave", "0")
