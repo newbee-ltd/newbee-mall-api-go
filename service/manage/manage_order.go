@@ -32,7 +32,7 @@ func (m *ManageOrderService) CheckDone(ids request.IdsReq) (err error) {
 			}
 		}
 		if errorOrders == "" {
-			if err := global.GVA_DB.Where("order_id in ?", ids.Ids).UpdateColumns(manage.MallOrder{OrderStatus: 2, UpdateTime: common.JSONTime{Time: time.Now()}}).Error; err != nil {
+			if err = global.GVA_DB.Where("order_id in ?", ids.Ids).UpdateColumns(manage.MallOrder{OrderStatus: 2, UpdateTime: common.JSONTime{Time: time.Now()}}).Error; err != nil {
 				return err
 			}
 		} else {
