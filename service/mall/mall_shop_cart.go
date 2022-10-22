@@ -16,7 +16,7 @@ import (
 type MallShopCartService struct {
 }
 
-// 不分页
+// GetMyShoppingCartItems 不分页
 func (m *MallShopCartService) GetMyShoppingCartItems(token string) (err error, cartItems []mallRes.CartItemResponse) {
 	var userToken mall.MallUserToken
 	var shopCartItems []mall.MallShoppingCartItem

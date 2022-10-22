@@ -17,20 +17,19 @@ import (
 type MallOrderService struct {
 }
 
+// SaveOrder 保存订单
 func (m *MallOrderService) SaveOrder(token string, userAddress mall.MallUserAddress, myShoppingCartItems []mallRes.CartItemResponse) (err error, orderNo string) {
 	var userToken mall.MallUserToken
 	err = global.GVA_DB.Where("token =?", token).First(&userToken).Error
 	if err != nil {
 		return errors.New("不存在的用户"), orderNo
 	}
-
 	var itemIdList []int
 	var goodsIds []int
 	for _, cartItem := range myShoppingCartItems {
 		itemIdList = append(itemIdList, cartItem.CartItemId)
 		goodsIds = append(goodsIds, cartItem.GoodsId)
 	}
-
 	var newBeeMallGoods []manage.MallGoodsInfo
 	global.GVA_DB.Where("goods_id in ? ", goodsIds).Find(&newBeeMallGoods)
 	//检查是否包含已下架商品
@@ -53,7 +52,6 @@ func (m *MallOrderService) SaveOrder(token string, userAddress mall.MallUserAddr
 			return errors.New("库存不足！"), orderNo
 		}
 	}
-
 	//删除购物项
 	if len(itemIdList) > 0 && len(goodsIds) > 0 {
 		if err = global.GVA_DB.Where("cart_item_id in ?", itemIdList).Updates(mall.MallShoppingCartItem{IsDeleted: 1}).Error; err == nil {
@@ -109,6 +107,7 @@ func (m *MallOrderService) SaveOrder(token string, userAddress mall.MallUserAddr
 	return
 }
 
+// PaySuccess 支付订单
 func (m *MallOrderService) PaySuccess(orderNo string, payType int) (err error) {
 	var mallOrder manage.MallOrder
 	err = global.GVA_DB.Where("order_no = ? and is_deleted=0 ", orderNo).First(&mallOrder).Error
@@ -126,6 +125,7 @@ func (m *MallOrderService) PaySuccess(orderNo string, payType int) (err error) {
 	return
 }
 
+// FinishOrder 完结订单
 func (m *MallOrderService) FinishOrder(token string, orderNo string) (err error) {
 	var userToken mall.MallUserToken
 	err = global.GVA_DB.Where("token =?", token).First(&userToken).Error
@@ -145,6 +145,7 @@ func (m *MallOrderService) FinishOrder(token string, orderNo string) (err error)
 	return
 }
 
+// CancelOrder 关闭订单
 func (m *MallOrderService) CancelOrder(token string, orderNo string) (err error) {
 	var userToken mall.MallUserToken
 	err = global.GVA_DB.Where("token =?", token).First(&userToken).Error
@@ -168,6 +169,7 @@ func (m *MallOrderService) CancelOrder(token string, orderNo string) (err error)
 	return
 }
 
+// GetOrderDetailByOrderNo 获取订单详情
 func (m *MallOrderService) GetOrderDetailByOrderNo(token string, orderNo string) (err error, orderDetail mallRes.MallOrderDetailVO) {
 	var userToken mall.MallUserToken
 	err = global.GVA_DB.Where("token =?", token).First(&userToken).Error
@@ -200,6 +202,7 @@ func (m *MallOrderService) GetOrderDetailByOrderNo(token string, orderNo string)
 	return
 }
 
+// MallOrderListBySearch 搜索订单
 func (m *MallOrderService) MallOrderListBySearch(token string, pageNumber int, status string) (err error, list []mallRes.MallOrderResponse, total int64) {
 	var userToken mall.MallUserToken
 	err = global.GVA_DB.Where("token =?", token).First(&userToken).Error

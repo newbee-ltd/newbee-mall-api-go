@@ -10,7 +10,7 @@ import (
 type MallIndexInfoService struct {
 }
 
-// 首页返回相关IndexConfig
+// GetConfigGoodsForIndex 首页返回相关IndexConfig
 func (m *MallIndexInfoService) GetConfigGoodsForIndex(configType int, num int) (err error, list interface{}) {
 	var indexConfigs []manage.MallIndexConfig
 	err = global.GVA_DB.Where("config_type = ?", configType).Where("is_deleted = 0").Order("config_rank desc").Limit(num).Find(&indexConfigs).Error
@@ -25,7 +25,6 @@ func (m *MallIndexInfoService) GetConfigGoodsForIndex(configType int, num int) (
 	// 获取商品信息
 	var goodsList []manage.MallGoodsInfo
 	err = global.GVA_DB.Where("goods_id in ?", ids).Find(&goodsList).Error
-
 	var indexGoodsList []response.MallIndexConfigGoodsResponse
 	// 超出30个字符显示....
 	for _, indexGoods := range goodsList {

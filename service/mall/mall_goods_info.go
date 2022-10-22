@@ -12,6 +12,7 @@ import (
 type MallGoodsInfoService struct {
 }
 
+// MallGoodsListBySearch 商品搜索分页
 func (m *MallGoodsInfoService) MallGoodsListBySearch(pageNumber int, goodsCategoryId int, keyword string, orderBy string) (err error, searchGoodsList []mallRes.GoodsSearchResponse, total int64) {
 	// 根据搜索条件查询
 	var goodsList []manage.MallGoodsInfo
@@ -45,10 +46,10 @@ func (m *MallGoodsInfoService) MallGoodsListBySearch(pageNumber int, goodsCatego
 		}
 		searchGoodsList = append(searchGoodsList, searchGoods)
 	}
-
 	return
 }
 
+// GetMallGoodsInfo 获取商品信息
 func (m *MallGoodsInfoService) GetMallGoodsInfo(id int) (err error, res mallRes.GoodsInfoDetailResponse) {
 	var mallGoodsInfo manage.MallGoodsInfo
 	err = global.GVA_DB.Where("goods_id = ?", id).First(&mallGoodsInfo).Error

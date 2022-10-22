@@ -13,6 +13,7 @@ import (
 type MallUserAddressService struct {
 }
 
+// GetMyAddress 获取收货地址
 func (m *MallUserAddressService) GetMyAddress(token string) (err error, userAddress []mall.MallUserAddress) {
 	var userToken mall.MallUserToken
 	err = global.GVA_DB.Where("token =?", token).First(&userToken).Error
@@ -23,6 +24,7 @@ func (m *MallUserAddressService) GetMyAddress(token string) (err error, userAddr
 	return
 }
 
+// SaveUserAddress 保存用户地址
 func (m *MallUserAddressService) SaveUserAddress(token string, req mallReq.AddAddressParam) (err error) {
 	var userToken mall.MallUserToken
 	if err = global.GVA_DB.Where("token =?", token).First(&userToken).Error; err != nil {
@@ -52,6 +54,7 @@ func (m *MallUserAddressService) SaveUserAddress(token string, req mallReq.AddAd
 	return
 }
 
+// UpdateUserAddress 更新用户地址
 func (m *MallUserAddressService) UpdateUserAddress(token string, req mallReq.UpdateAddressParam) (err error) {
 	var userToken mall.MallUserToken
 	if err = global.GVA_DB.Where("token =?", token).First(&userToken).Error; err != nil {

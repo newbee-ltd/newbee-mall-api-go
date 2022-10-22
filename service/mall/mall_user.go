@@ -18,6 +18,7 @@ import (
 type MallUserService struct {
 }
 
+// RegisterUser 注册用户
 func (m *MallUserService) RegisterUser(req mallReq.RegisterUserParam) (err error) {
 	if !errors.Is(global.GVA_DB.Where("login_name =?", req.LoginName).First(&mall.MallUser{}).Error, gorm.ErrRecordNotFound) {
 		return errors.New("存在相同用户名")
