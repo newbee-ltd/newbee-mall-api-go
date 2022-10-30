@@ -34,7 +34,7 @@ func (m *MallOrderService) SaveOrder(token string, userAddress mall.MallUserAddr
 	global.GVA_DB.Where("goods_id in ? ", goodsIds).Find(&newBeeMallGoods)
 	//检查是否包含已下架商品
 	for _, mallGoods := range newBeeMallGoods {
-		if mallGoods.GoodsSellStatus != 0 {
+		if mallGoods.GoodsSellStatus != enum.GOODS_UNDER.Code() {
 			return errors.New("已下架，无法生成订单"), orderNo
 		}
 	}
@@ -115,7 +115,7 @@ func (m *MallOrderService) PaySuccess(orderNo string, payType int) (err error) {
 		if mallOrder.OrderStatus != 0 {
 			return errors.New("订单状态异常！")
 		}
-		mallOrder.OrderStatus = 1
+		mallOrder.OrderStatus = enum.ORDER_PAID.Code()
 		mallOrder.PayType = payType
 		mallOrder.PayStatus = 1
 		mallOrder.PayTime = common.JSONTime{time.Now()}
