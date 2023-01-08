@@ -217,9 +217,10 @@ func (m *MallOrderService) MallOrderListBySearch(token string, pageNumber int, s
 		db.Where("order_status = ?", status)
 	}
 	err = db.Where("user_id =? and is_deleted=0 ", userToken.UserId).Count(&total).Error
-	limit := 5
+	//这里前段没有做滚动加载，直接显示全部订单
+	//limit := 5
 	offset := 5 * (pageNumber - 1)
-	err = db.Limit(limit).Offset(offset).Find(&newBeeMallOrders).Error
+	err = db.Offset(offset).Order(" order_id desc").Find(&newBeeMallOrders).Error
 
 	var orderListVOS []mallRes.MallOrderResponse
 	if total > 0 {
