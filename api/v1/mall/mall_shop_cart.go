@@ -1,13 +1,14 @@
 package mall
 
 import (
+	"strconv"
+
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"main.go/global"
 	"main.go/model/common/response"
 	mallReq "main.go/model/mall/request"
 	"main.go/utils"
-	"strconv"
 )
 
 type MallShopCartApi struct {
@@ -51,8 +52,9 @@ func (m *MallShopCartApi) DelMallShoppingCartItem(c *gin.Context) {
 	if err := mallShopCartService.DeleteMallCartItem(token, id); err != nil {
 		global.GVA_LOG.Error("修改购物车失败", zap.Error(err))
 		response.FailWithMessage("修改购物车失败:"+err.Error(), c)
+	} else {
+		response.OkWithMessage("修改购物车成功", c)
 	}
-	response.OkWithMessage("修改购物车成功", c)
 }
 
 func (m *MallShopCartApi) ToSettle(c *gin.Context) {
