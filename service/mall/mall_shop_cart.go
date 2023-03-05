@@ -2,6 +2,8 @@ package mall
 
 import (
 	"errors"
+	"time"
+
 	"github.com/jinzhu/copier"
 	"main.go/global"
 	"main.go/model/common"
@@ -10,7 +12,6 @@ import (
 	mallRes "main.go/model/mall/response"
 	"main.go/model/manage"
 	"main.go/utils"
-	"time"
 )
 
 type MallShopCartService struct {
@@ -126,7 +127,7 @@ func (m *MallShopCartService) DeleteMallCartItem(token string, id int) (err erro
 	if userToken.UserId != shopCartItem.UserId {
 		return errors.New("禁止该操作！")
 	}
-	err = global.GVA_DB.Where("cart_item_id = ? and is_delete = 0", id).UpdateColumns(&mall.MallShoppingCartItem{IsDeleted: 1}).Error
+	err = global.GVA_DB.Where("cart_item_id = ? and is_deleted = 0", id).UpdateColumns(&mall.MallShoppingCartItem{IsDeleted: 1}).Error
 	return
 }
 
