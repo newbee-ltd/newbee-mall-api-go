@@ -28,7 +28,7 @@ func (m *MallUserApi) UserRegister(c *gin.Context) {
 
 func (m *MallUserApi) UserInfoUpdate(c *gin.Context) {
 	var req mallReq.UpdateUserInfoParam
-	err := c.BindJSON(&req)
+	err := c.ShouldBindJSON(&req)
 	if err != nil {
 		global.GVA_LOG.Error("参数错误", zap.Error(err))
 		response.FailWithMessage("参数错误"+err.Error(), c)
